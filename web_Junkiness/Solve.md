@@ -9,11 +9,12 @@ Bu soruda, bir Node.js uygulamasının register ve login mekanizmalarındaki gü
 
     Auth Bypass: Giriş panelinde var olmayan bir kullanıcı üzerinden prototip zinciri tetiklenmiş ve Admin yetkisiyle içeri girilmiştir.
 
-    İsteği Yakalama (Intercepting): İlk olarak web sitesinde rastgele bir kayıt (register) denemesi yapın ve giden POST /register isteğini Burp Suite aracılığıyla yakalayın.
+Çözüm Adımları
+    İsteği Yakalama (Intercepting): İlk olarak web sitesinde rastgele bir kayıt (register) denemesi yapın ve giden POST /register isteğini Burp Suite aracılığıyla     yakalayın.
 
-Payload Enjeksiyonu: Yakalanan isteği Repeater modülüne gönderin. İstek gövdesini (body), Prototip Kirlenmesi (Prototype Pollution) payload'ını içerecek şekilde değiştirin (Örneğin: Uzunluk kontrolünü atlatmak için username[] ve özellik enjeksiyonu için __proto__ kullanın).
+    Payload Enjeksiyonu: Yakalanan isteği Repeater modülüne gönderin. İstek gövdesini (body), Prototip Kirlenmesi (Prototype Pollution) payload'ını içerecek şekilde değiştirin (Örneğin: Uzunluk kontrolünü atlatmak için username[] ve özellik enjeksiyonu için __proto__ kullanın).
 
-Yetki Atlatma (Auth Bypass): Sunucu "Başarılı" mesajı verdikten sonra, zehirlediğiniz parametreleri kullanarak giriş yapın. Global nesne artık kirlendiği için uygulama, giriş yaptığınızda size yönetici (admin) yetkisi verecektir.
+    Yetki Atlatma (Auth Bypass): Sunucu "Başarılı" mesajı verdikten sonra, zehirlediğiniz parametreleri kullanarak giriş yapın. Global nesne artık kirlendiği için uygulama, giriş yaptığınızda size yönetici (admin) yetkisi verecektir.
 
 🇺🇸 English Summary
 
@@ -25,7 +26,7 @@ The "Junkiness" challenge involved exploiting unsafe object merging in a Node.js
 
     Logic Bypass: Leveraged the prototype chain by logging in with a non-existent user, forcing the app to inherit the "Admin" status from the polluted prototype.
 
-    🇺🇸 Steps to Reproduce (Exploitation Flow)
+🇺🇸 Steps to Reproduce (Exploitation Flow)
 
     Intercepting the Request: First, perform a random registration attempt on the website and intercept the outgoing POST /register request using Burp Suite.
 
