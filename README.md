@@ -20,5 +20,5 @@ Bu depoda (repository) göreceğiniz çözümler ve ekran görüntüleri, uygula
 
     Gerçek Bayrak: Gerçek bayrağı elde etmek için, CTF platformu üzerinden bir instance (canlı makine) başlatmalı ve size verilen kısıtlı süre içerisinde burada açıklanan adımları canlı sunucu üzerinde uygulamalısınız.
 
-    Doğrulama: Eğer yerel ortamda "fake flag" alabiliyorsanız, çözüm yolunuz %100 doğrudur ve canlı sistemde de çalışacaktır.
+    Doğrulama: Eğer yerel ortamda "fake flag" ya da "test fake flag" alabiliyorsanız, çözüm yolunuz %100 doğrudur ve canlı sistemde de çalışacaktır.
 
