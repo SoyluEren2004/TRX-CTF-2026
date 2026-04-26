@@ -87,7 +87,7 @@ app.post("/login", (req, res) => {
     }
 
     req.session.username = username;
-    // 2. KONTROL: Girdi büyük harfe çevriliyor ve admin ismiyle karşılaştırılıyor ki asıl problemde burda kontrolü önce yapmadığı için öncesinde istediğimiz gibi karakterleri küçültüp büyütüyoruz 1. kontrolden geçiyoruz sonra ise büyültüp küçültüğümüz payloadı alıyor büyük harflere çevirip bir daha kontrol ediyor ve karakter sınır kuralını atlatıyoruz böylece.
+    /* 2. KONTROL: Girdi büyük harfe çevriliyor ve admin ismiyle karşılaştırılıyor ki asıl problemde burda kontrolü önce yapmadığı için öncesinde istediğimiz gibi karakterleri küçültüp büyütüyoruz 1. kontrolden geçiyoruz sonra ise büyültüp küçültüğümüz payloadı alıyor büyük harflere çevirip bir daha kontrol ediyor ve karakter sınır kuralını atlatıyoruz böylece.*/
     req.session.isAdmin = username.toUpperCase() === ADMIN_USERNAME.toUpperCase();
     res.redirect("/");
 });
