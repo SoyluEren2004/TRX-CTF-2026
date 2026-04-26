@@ -1,3 +1,27 @@
+🇺🇸 English Version
+Challenge Analysis
+
+The application is a WHOIS lookup tool built with Ruby (Sinatra). While it attempts to validate input using a Regex filter, the implementation is flawed, allowing for unintended command execution.
+Vulnerabilities
+
+    Regex Multiline Bypass: In Ruby, ^ and $ symbols match the start and end of a line, rather than the entire string. Using %0a (new line) bypasses the validation.
+
+    Command Injection: User input is directly interpolated into a shell command via Open3.capture3, enabling the execution of arbitrary system commands.
+
+    SUID Binary: The binary /readflag has the SUID bit set, running with root privileges to read the flag if the correct passphrase is provided.
+
+Exploitation Steps
+
+    Intercept: Capture the lookup request using Burp Suite.
+
+    Inject: Append %0a to the domain parameter followed by the /readflag command.
+
+    Quote Arguments: Wrap the required passphrase in quotes (%22) and use URL encoding (%20 for spaces) to ensure the command is parsed correctly.
+
+    Capture Flag: Read the flag from the server's response
+
+
+
 tr Türkçe Açıklama
 Soru Analizi
 
@@ -20,25 +44,5 @@ Zafiyetler
 
     Bayrağı Al: Sunucudan dönen yanıtın içinde bayrağı (flag) okuyun.
 
-🇺🇸 English Version
-Challenge Analysis
 
-The application is a WHOIS lookup tool built with Ruby (Sinatra). While it attempts to validate input using a Regex filter, the implementation is flawed, allowing for unintended command execution.
-Vulnerabilities
-
-    Regex Multiline Bypass: In Ruby, ^ and $ symbols match the start and end of a line, rather than the entire string. Using %0a (new line) bypasses the validation.
-
-    Command Injection: User input is directly interpolated into a shell command via Open3.capture3, enabling the execution of arbitrary system commands.
-
-    SUID Binary: The binary /readflag has the SUID bit set, running with root privileges to read the flag if the correct passphrase is provided.
-
-Exploitation Steps
-
-    Intercept: Capture the lookup request using Burp Suite.
-
-    Inject: Append %0a to the domain parameter followed by the /readflag command.
-
-    Quote Arguments: Wrap the required passphrase in quotes (%22) and use URL encoding (%20 for spaces) to ensure the command is parsed correctly.
-
-    Capture Flag: Read the flag from the server's response
 
