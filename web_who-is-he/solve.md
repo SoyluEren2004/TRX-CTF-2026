@@ -42,14 +42,3 @@ Exploitation Steps
 
     Capture Flag: Read the flag from the server's response
 
-Vulnerable Code Snippet
-    # The root cause of the vulnerability
-post '/lookup' do
-  @domain = params[:domain]
-  # Problem: Regex only checks the first line
-  if @domain && @domain.match?(/^[a-z.-]+$/) 
-    # Problem: Direct command injection
-    stdout, stderr, status = Open3.capture3("whois #{@domain}") 
-    @result = stdout.empty? ? stderr : stdout
-  end
-end
