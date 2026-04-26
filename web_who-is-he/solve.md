@@ -42,8 +42,7 @@ Exploitation Steps
 
     Capture Flag: Read the flag from the server's response
 
-    Vulnerable Code Snippet (Ruby):
-
+Vulnerable Code Snippet
     # The root cause of the vulnerability
 post '/lookup' do
   @domain = params[:domain]
