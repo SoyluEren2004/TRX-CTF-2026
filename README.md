@@ -22,3 +22,30 @@ Bu depoda (repository) göreceğiniz çözümler ve ekran görüntüleri, uygula
 
     Doğrulama: Eğer yerel ortamda "fake flag" ya da "test fake flag" alabiliyorsanız, çözüm yolunuz %100 doğrudur ve canlı sistemde de çalışacaktır.
 
+
+🇺🇸 Local Lab Experience
+
+If you would like to test these vulnerabilities live on your own machine:
+
+    Setup: Download the project as a ZIP file or clone the repository, then use Docker to spin up your local environment in seconds.
+
+    Free Mode: You can challenge yourself by trying to find the vulnerabilities on your own without any hints or writeups.
+
+    Guided Mode: If you get stuck, you can follow the steps in my Writeup to learn exactly how the exploits work step-by-step.
+
+    Note: Successfully exploiting the local environment will yield a TRX{fake_flag}. This confirms that your logic is correct and ready to be applied to a live instance.
+
+🇹🇷 Yerel Laboratuvar Deneyimi (Local Lab Experience)
+
+Zafiyetleri kendi bilgisayarınızda canlı olarak test etmek isterseniz:
+
+    Kurulum: Proje dosyalarını ZIP olarak indirin veya repoyu klonlayın, ardından Docker kullanarak yerel ortamınızı saniyeler içinde ayağa kaldırın.
+
+    Serbest Mod: İsterseniz hiçbir ipucu almadan, tamamen kendi tekniklerinizle sistemdeki açıkları bulmaya çalışabilirsiniz.
+
+    Rehberli Mod: Takıldığınız noktalarda hazırladığım Writeup adımlarını takip ederek zafiyetlerin nasıl sömürüldüğünü (exploit) adım adım öğrenebilirsiniz.
+
+    Not: Yerel ortamda başarılı bir sızma gerçekleştirdiğinizde TRX{fake_flag} değerini elde edeceksiniz. Bu, çözüm mantığınızın doğru olduğunu ve canlı instance üzerinde de çalışacağını teyit eder.
+
+# Laboratuvarı başlatmak için:
+docker-compose up --build
